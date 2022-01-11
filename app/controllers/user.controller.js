@@ -37,7 +37,7 @@ exports.findAll = (req,res)=>{
 exports.getSingleUser = (req,res)=>{
     const userId = req.params.id
     console.log(userId)
-    User.findOne({id:userId})
+    User.findOne({_id:userId})
     .then(data=>{
         res.send(data)
     })
