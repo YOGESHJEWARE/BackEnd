@@ -42,3 +42,17 @@ exports.getSingleUser = (req,res)=>{
         res.send(data)
     })
 }
+
+exports.updateUser = (req,res)=>{
+    const userId = req.params.id
+    console.log(req.body)
+    User.findByIdAndUpdate(userId,req.body)
+    .then(data=>{
+        if (!data)
+        {
+            res.send({status:404,message:'User Not Found'})
+        }else{
+            res.send({status:200,message:'User Updated Successfully'})
+        }
+    })
+}
