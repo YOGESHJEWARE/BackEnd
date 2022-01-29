@@ -11,7 +11,7 @@ module.exports= app =>{
 
     router.get('/user/:id',users.getSingleUser)
     
-    // router.put('/editUser/:id',users.updateUser)
+    router.put('/editUser/:id',users.updateUser)
     
     app.use('/api',router)  //context path
  
